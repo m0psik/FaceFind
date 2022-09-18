@@ -1,7 +1,6 @@
 #include "FaceFinder.h"
 
 #include <iostream>
-#include <filesystem>
 
 FaceFinder::FaceFinder() = default;
 
