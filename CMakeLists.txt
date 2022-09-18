@@ -6,4 +6,11 @@ set(SOURCE_FILES src/main.cpp)
 add_executable(FaceFind ${SOURCE_FILES})
 
 add_subdirectory(src/libfacefind)
-target_link_libraries(FaceFind libfacefind)
+add_subdirectory(src/libproto)
+
+target_link_libraries(${PROJECT_NAME}
+        PUBLIC
+        libfacefind
+        libproto)
+
+

@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+message Data {
+  oneof data {
+    Person person = 1;
+    Answer answer = 2;
+  }
+}
+
+message Person {
+  bytes uuid         = 1;
+  repeated Face faces = 2;
+}
+
+message Face {
+  uint32 num      = 1;
+  bytes face_data = 2;
+}
+
+message Answer {
+  bytes uuid = 1;
+  bool access = 2;
+}
