@@ -1,5 +1,10 @@
 syntax = "proto3";
 
+enum Direction {
+  DIRECTION_IN  = 0;
+  DIRECTION_OUT = 1;
+}
+
 message Data {
   oneof data {
     Person person = 1;
@@ -8,8 +13,9 @@ message Data {
 }
 
 message Person {
-  bytes uuid         = 1;
+  bytes uuid          = 1;
   repeated Face faces = 2;
+  Direction direction = 3;
 }
 
 message Face {
@@ -18,6 +24,6 @@ message Face {
 }
 
 message Answer {
-  bytes uuid = 1;
+  bytes uuid  = 1;
   bool access = 2;
 }
