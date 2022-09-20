@@ -13,12 +13,12 @@ protobuf_generate_cpp(PROTO_SRC PROTO_HEADER face.proto)
 
 set(SOURCES
         FaceInfo.cpp
-        Answer.cpp
+        AnswerInfo.cpp
         ${PROTO_SRC})
 
 set(HEADERS
         FaceInfo.h
-        Answer.h
+        AnswerInfo.h
         ${PROTO_HEADER})
 
 add_library(libproto ${SOURCES} ${HEADERS})
