@@ -13,7 +13,7 @@ message Data {
 }
 
 message Person {
-  bytes uuid          = 1;
+  string uuid         = 1;
   repeated Face faces = 2;
   Direction direction = 3;
 }
@@ -24,6 +24,6 @@ message Face {
 }
 
 message Answer {
-  bytes uuid  = 1;
+  string uuid = 1;
   bool access = 2;
 }

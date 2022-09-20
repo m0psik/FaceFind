@@ -28,7 +28,7 @@ FaceInfo::getSerializedData() {
 
 void FaceInfo::serialize() {
     Data *data = new Data();
-    data->mutable_person()->set_uuid(this->uuid.toByteArray().data());
+    data->mutable_person()->set_uuid(this->uuid.toString().toStdString());
     data->mutable_person()->set_direction(static_cast< Direction > ( this->direction ));
     int it = 0;
     for (QByteArray face: this->faces) {
