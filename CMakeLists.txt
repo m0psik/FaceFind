@@ -8,9 +8,6 @@ add_executable(FaceFind ${SOURCE_FILES})
 add_subdirectory(src/libfacefind)
 add_subdirectory(src/libproto)
 
-target_link_libraries(${PROJECT_NAME}
-        PUBLIC
-        libfacefind
-        libproto)
+target_link_libraries(${PROJECT_NAME} libfacefind libproto)
 
 

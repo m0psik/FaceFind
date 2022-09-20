@@ -1,4 +1,4 @@
-project(libprotobuf)
+project(libproto)
 
 find_package(Protobuf REQUIRED)
 
@@ -15,7 +15,7 @@ set(HEADERS
         FaceInfo.h
         ${PROTO_HEADER})
 
-add_library(libprotobuf ${SOURCES} ${HEADERS})
-target_include_directories(libprotobuf PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+add_library(libproto ${SOURCES} ${HEADERS})
+target_include_directories(libproto PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 target_link_libraries(${PROJECT_NAME} ${PROTOBUF_LIBS})
