@@ -8,15 +8,9 @@
 class FaceFinder {
 public:
     FaceFinder();
-    void setObjectNumber(const short& _objectNumber);
-    void setCameraNumber(const short& _cameraNumber);
-    void start();
+    std::vector< uchar* > start();
 private:
-    int current_id = 0;
-    void increase_id();
     std::vector<cv::Mat> faces;
-    short cameraNumber{};
-    short objectNumber{};
     bool isFaceDetected(); // функция определяющая наличие лица в кадре
     static void motionAnalyze() ;
 };

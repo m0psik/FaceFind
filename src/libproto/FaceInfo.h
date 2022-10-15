@@ -10,6 +10,7 @@ enum DIRECTION {
 };
 
 class FaceInfo {
+public:
     FaceInfo();
 
     void addFace(const QByteArray& face);

@@ -4,22 +4,7 @@
 
 FaceFinder::FaceFinder() = default;
 
-void FaceFinder::setCameraNumber(const short &_cameraNumber) {
-    cameraNumber = _cameraNumber;
-}
-
-void FaceFinder::increase_id() {
-    if (current_id == 60000) {
-        current_id = 0;
-    }
-    current_id++;
-}
-
-void FaceFinder::setObjectNumber(const short &_objectNumber) {
-    objectNumber = _objectNumber;
-}
-
-void FaceFinder::start() {
+std::vector< uchar* > FaceFinder::start() {
     while (true) {
         motionAnalyze();
         if (!isFaceDetected()) {
@@ -27,11 +12,11 @@ void FaceFinder::start() {
             continue;
         }
         std::cout << "FACE DETECTED\n";
-        increase_id();
+        std::vector< uchar* > result;
         for (auto &face: faces) {
-            cv::imwrite("test.jpg", face);
+            result.push_back( face.data );
         }
-        return;
+        return result;
     }
 }
 
